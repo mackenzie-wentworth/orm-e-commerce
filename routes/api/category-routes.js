@@ -14,11 +14,16 @@ router.get('/', (req, res) => {
         attributes: ['id', 'product_name', 'price', 'stock', 'category_id']
       }
     })
-    res.status(200).json(catData);
-  }
-  catch (err) {
-    res.status(400).json(err);
-  }
+      if(!catData) {
+        res.status(404).json({message: 'Error! No categories found!'});
+        return;
+      }
+      res.json(catData);
+    }
+    catch (err) {
+      console.log(err);
+      res.status(500).json(err)
+    }
 });
 
 
@@ -38,11 +43,16 @@ router.get('/:id', (req, res) => {
         attributes: ['id', 'product_name', 'price', 'stock', 'category_id']
       }
     })
-    res.status(200).json(catData);
-  }
-  catch (err) {
-    res.status(400).json(err);
-  }
+      if(!catData) {
+        res.status(404).json({message: 'Error! No categories found!'});
+        return;
+      }
+      res.json(catData);
+    }
+    catch (err) {
+      console.log(err);
+      res.status(500).json(err)
+    }
 });
 
 
