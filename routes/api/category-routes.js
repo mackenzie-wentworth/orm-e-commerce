@@ -3,31 +3,51 @@ const { Category, Product } = require('../../models');
 
 // The `/api/categories` endpoint
 
+// Category findAll()
 router.get('/', (req, res) => {
   // find all categories
-  Category.findAll({
+  try {
+    Category.findAll({
       // be sure to include its associated Products
       include: {
         model: Product,
         attributes: ['id', 'product_name', 'price', 'stock', 'category_id']
       }
-  })
+    })
+    res.status(200).json(catData);
+  }
+  catch (err) {
+    res.status(400).json(err);
+  }
 });
 
+
+
+
+// Category findOne()
 router.get('/:id', (req, res) => {
   // find one category by its `id` value
-  Category.findOne({
-    where: {
-      id: req.params.id
-    },
-    // be sure to include its associated Products
-    include: {
-      model: Product,
-      attributes: ['id', 'product_name', 'price', 'stock', 'category_id']
-    }
-  })
-
+  try {
+    Category.findOne({
+      where: {
+        id: req.params.id
+      },
+      // be sure to include its associated Products
+      include: {
+        model: Product,
+        attributes: ['id', 'product_name', 'price', 'stock', 'category_id']
+      }
+    })
+    res.status(200).json(catData);
+  }
+  catch (err) {
+    res.status(400).json(err);
+  }
 });
+
+
+
+
 
 router.post('/', (req, res) => {
   // create a new category
