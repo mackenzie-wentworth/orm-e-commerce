@@ -58,7 +58,7 @@ router.get('/:id', (req, res) => {
 
 
 
-
+// Category POST 
 router.post('/', (req, res) => {
   // create a new category
   try {
@@ -74,28 +74,57 @@ router.post('/', (req, res) => {
   }
 });
 
+
+
+
+// Category PUT 
 router.put('/:id', (req, res) => {
   // update a category by its `id` value
-  Category.update(req.body, {
-    where: {
-      id: req.params.id
-    }
-  })
-    .then(catData => {
-      if (!catData) {
-        res.status(404).json({ message: 'Sorry, no category found with this id!' });
-        return;
+  try {
+    Category.update(req.body, {
+      where: {
+        id: req.params.id
       }
-      res.json(catData);
     })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+    if (!catData) {
+      res.status(404).json({ message: 'Sorry, no category found with this id!' });
+      return;
+    }
+    res.json(catData);
+  }
+  catch (err) {
+    console.log(err);
+    res.status(500).json(err)
+  }
 });
 
+
+
+
+
+// Category DELETE
 router.delete('/:id', (req, res) => {
   // delete a category by its `id` value
+  try {
+    Category.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+    if (!catData){
+      res.status(404).json({message: 'Sorry, no category found with that id!'});
+      return;
+    }
+    res.json(catData);
+  }
+  catch (err) {
+    console.log(err);
+    res.status(500).json(err)
+  }
 });
 
+
+
+
+// Export router module
 module.exports = router;
