@@ -13,12 +13,12 @@ Category.findAll({
     attributes: ['id', 'product_name', 'price', 'stock', 'category_id']
   }
 })
-  .then(catData => {
-    if(!dbCatData) {
+  .then(categoryData => {
+    if(!categoryData) {
       res.status(404).json({message: 'Error! No categories found!'});
       return;
     }
-    res.json(catData);
+    res.json(categoryData);
   })
   .catch(err => {
     console.log(err);
@@ -40,12 +40,12 @@ Category.findOne({
     attributes: ['id', 'product_name', 'price', 'stock', 'category_id']
   }
 })
-  .then(catData => {
-    if(!catData) {
-      res.status(404).json({message: 'Error! No categories found!'});
+  .then(categoryData => {
+    if(!categoryData) {
+      res.status(404).json({message: 'Error! No category found with this id!'});
       return;
     }
-    res.json(catData);
+    res.json(categoryData);
   })
   .catch(err => {
     console.log(err);
@@ -60,7 +60,7 @@ router.post('/', (req, res) => {
 Category.create({
   category_name: req.body.category_name
 })
-  .then(catData => res.json(catData))
+  .then(categoryData => res.json(categoryData))
   .catch(err => {
     console.log(err);
     res.status(500).json(err);
@@ -76,12 +76,12 @@ Category.update(req.body, {
     id: req.params.id
   }
 })
-  .then(dbCatData => {
-    if (!dbCatData) {
+  .then(categoryData => {
+    if (!categoryData) {
       res.status(404).json({message:'Sorry, no category found with this id!'});
       return;
     }
-    res.json(dbCatData);
+    res.json(categoryData);
   })
   .catch(err => {
     console.log(err);
@@ -98,12 +98,12 @@ Category.destroy({
     id: req.params.id
   }
 })
-  .then(dbCatData => {
-    if (!dbCatData){
+  .then(categoryData => {
+    if (!categoryData){
       res.status(404).json({message: 'Sorry, no category found with that id!'});
       return;
     }
-    res.json(dbCatData);
+    res.json(categoryData);
   })
   .catch(err => {
     console.log(err);
