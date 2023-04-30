@@ -55,7 +55,7 @@ Within VS Code, open a new integrated terminal from the root directory to instal
 * [Express](https://www.npmjs.com/package/express)
 * [Sequelize](https://www.npmjs.com/package/sequelize)
 
->**NOTE**: After you've cloned this repository, you will need to rename the `.env.EXAMPLE` file to `.env`. Then, set up the new .env file using your MySQL credentials.
+>**NOTE**: After you've cloned this repository, you will need to rename the `.env.EXAMPLE` file to `.env`. Then, set up the new `.env` file using your `MySQL` credentials.
 ---
 
 ## Usage
