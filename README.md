@@ -103,13 +103,13 @@ To demonstrate the functionality of the application's back end and API configura
 ### *Video Demonstration:*
 [Watch demo video here!](https://user-images.githubusercontent.com/122484637/235378020-27a2e05b-0b26-44ae-a5cf-9f4886f65d43.webm)
 
-
 ---
 
 ## Questions?
 If you have any questions, please see my contact information below to reach me for inquiries:
 * **GitHub**: mackenzie-wentworth, at https://github.com/mackenzie-wentworth
 * **Email**: mwentworth28@gmail.com
+
 
 ## License
 This project is covered under the [MIT License](./LICENSE). For more details, please click the license button under 'Badges' at the top of the page.
