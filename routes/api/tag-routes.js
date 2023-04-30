@@ -7,23 +7,23 @@ const { Tag, Product, ProductTag } = require('../../models');
 router.get('/', (req, res) => {
   // find all tags
   Tag.findAll({
-      // be sure to include its associated Product data
+    // be sure to include its associated Product data
     include: {
       model: Product,
       attributes: ['product_name', 'price', 'stock', 'category_id']
     }
   })
-  .then(tag => {
-    if (!tag) {
-      res.status(404).json({ message: 'Error! No tags found!' });
-      return;
-    }
-    res.json(tag);
-  })
-  .catch(err => {
-    console.log(err);
-    res.status(500).json(err)
-  });
+    .then(tag => {
+      if (!tag) {
+        res.status(404).json({ message: 'Error! No tags found!' });
+        return;
+      }
+      res.json(tag);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err)
+    });
 });
 
 
@@ -40,17 +40,17 @@ router.get('/:id', (req, res) => {
       attributes: ['product_name', 'price', 'stock', 'category_id']
     }
   })
-  .then(tag => {
-    if (!tag) {
-      res.status(404).json({ message: 'Error! No tag found with this id!' });
-      return;
-    }
-    res.json(tag);
-  })
-  .catch(err => {
-    console.log(err);
-    res.status(500).json(err);
-  });
+    .then(tag => {
+      if (!tag) {
+        res.status(404).json({ message: 'Error! No tag found with this id!' });
+        return;
+      }
+      res.json(tag);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 
@@ -77,8 +77,8 @@ router.put('/:id', (req, res) => {
     }
   })
     .then(tag => {
-      if (!tag){
-        res.status(404).json({message:'Sorry, no tag found with this id!'});
+      if (!tag) {
+        res.status(404).json({ message: 'Sorry, no tag found with this id!' });
         return;
       }
       res.json(tag);
@@ -98,17 +98,17 @@ router.delete('/:id', (req, res) => {
       id: req.params.id
     }
   })
-  .then(tag => {
-    if (!tag) {
-      res.status(404).json({message: 'Sorry, no tag found with that id!'});
-      return;
-    }
-    res.json(tag);
-  })
-  .catch(err =>{
-    console.log(err);
-    res.status(500).json(err);
-  });
+    .then(tag => {
+      if (!tag) {
+        res.status(404).json({ message: 'Sorry, no tag found with that id!' });
+        return;
+      }
+      res.json(tag);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 

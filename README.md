@@ -101,10 +101,7 @@ To demonstrate the functionality of the application's back end and API configura
 6. You are now ready to start testing the back end of the database using **Insomnia**!
 
 ### *Video Demonstration:*
-[video-demo-ecommerce.webm](https://user-images.githubusercontent.com/122484637/235378020-27a2e05b-0b26-44ae-a5cf-9f4886f65d43.webm)
-
-
-### *Application Visuals:*
+[Watch demo video here!](https://user-images.githubusercontent.com/122484637/235378020-27a2e05b-0b26-44ae-a5cf-9f4886f65d43.webm)
 
 
 ---
