@@ -7,7 +7,7 @@ To view the GitHub repository for this project, please visit the following link:
 
 
 ## Description
-For this week's Challenge, I was given a starter code to build the back end of a e-commerce website using Object-Relational Mapping (ORM). As part of the existing code, I was tasked to configure an `Express.js` API so that it connects to `Sequelize` and interacts with a `MySQL` database.  
+For this week's Challenge, I was given a starter code to build the back end of an e-commerce website using Object-Relational Mapping (ORM). As part of the existing code, I was tasked to configure an `Express.js` API so that it connects to `Sequelize` and interacts with a `MySQL` database.  
 
 ---
 
@@ -112,4 +112,4 @@ If you have any questions, please see my contact information below to reach me f
 
 
 ## License
-This project is covered under the [MIT License](./LICENSE). For more details, please click the license button under 'Badges' at the top of the page.
+This project is covered under the [MIT License](./LICENSE). For more details, please click the license icon at the top of the page.
